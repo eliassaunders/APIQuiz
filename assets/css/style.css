@@ -1,0 +1,36 @@
+.header {
+    color: blueviolet;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.startBtn {
+    height: 50px;
+    width: 200px;
+    font-size: larger;
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: blueviolet;
+    text-align: start;
+}
+
+footer p {
+    opacity: .55;
+    font-weight: bolder;
+}

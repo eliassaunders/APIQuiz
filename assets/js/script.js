@@ -20,6 +20,11 @@ const q4a = ["1. 1.3 million", "2. 500k", "3. Not accurate", "4. 1.1 million"];
 
 var timer = 60;
 
+setInterval(function() {
+    if (timer === 0) {
+        renderScorePage();
+    }
+}, 500);
 
 var startBtnEl = function (event) {
 
@@ -194,13 +199,11 @@ var renderQuestion4 = function () {
 var renderScorePage = function () {
     questionsEl.textContent = "";
     answerListEl.textContent = "";
+    questionSecEl.textContent = "";
 
-    if (localStorage.getItem(score)) {
-        var previous = document.createElement("p");
-        previous.textContent = localStorage.getItem("score");
-        answerListEl.appendChild(previous)
-    }
-
+    var previous = document.createElement("p");
+    previous.textContent = "Previous Score: " + localStorage.getItem("score");
+    answerListEl.appendChild(previous)
 
     var scoreRead = document.createElement("p");
     scoreRead.textContent = score;
@@ -222,5 +225,6 @@ var renderScorePage = function () {
         answerListEl.appendChild(scorep);
         localStorage.setItem("score", scorep.textContent);
     }
-}
+};
+
 navEl.addEventListener("click", startBtnEl);
